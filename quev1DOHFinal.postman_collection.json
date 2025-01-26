@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "d7d4d5d3-9156-4ba7-acaf-15329e1bba6f",
+		"name": "quev1DOHFinal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40835786"
+	},
+	"item": [
+		{
+			"name": "POSTQuenum",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"officeto\": \"Office C\",\r\n    \"priority\": \"PWD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:2025/api/v1/queue/add"
+			},
+			"response": []
+		},
+		{
+			"name": "GETAllQue",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:2025/api/v1/queue/all"
+			},
+			"response": []
+		},
+		{
+			"name": "PUTQueById",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"officeto\": \"Office A\",\r\n    \"priority\": \"PWD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:2025/api/v1/queue/update/1"
+			},
+			"response": []
+		},
+		{
+			"name": "GETAllOfficeById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:2025/api/v1/queue/offices/1"
+			},
+			"response": []
+		},
+		{
+			"name": "GETAllOfficeByOffice",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:2025/api/v1/queue/que-office-reports/Office A"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETESOFTbyid",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:2025/api/v1/queue/delete/1"
+			},
+			"response": []
+		}
+	]
+}
