@@ -43,7 +43,7 @@ public class QueueController {
     }
 
     // New endpoint to get all quenum, officeto, and priority for the same officeto  // for reports queued
-    @GetMapping("/que-office-reports/{officeto}")
+    @GetMapping("/que-office/{officeto}")
     public List<Object[]> getQuenumAndOfficesAndPriorityByOfficeto(@PathVariable String officeto) {
         return queueOfficeListRepository.findQuenumAndOfficesAndPriorityByOfficeto(officeto);
     }
@@ -75,6 +75,11 @@ public class QueueController {
     }
 
 
+    // New endpoint to get all QueueOfficeList for a given officeto
+    @GetMapping("/get-listby-office/{officeto}")
+    public List<QueueOfficeList> getQueueListByOffice(@PathVariable String officeto) {
+        return queueOfficeListRepository.findByOfficeto(officeto);
+    }
 
 
 

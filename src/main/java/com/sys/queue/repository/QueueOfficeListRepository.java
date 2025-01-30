@@ -20,4 +20,7 @@ public interface QueueOfficeListRepository extends JpaRepository<QueueOfficeList
 
     // Find QueueOfficeList by foreign key (QueueList ID)
     List<QueueOfficeList> findByQueueListId(Integer queueListId);
+
+    // Custom query to fetch all QueueOfficeList for a specific officeto
+    List<QueueOfficeList> findByOfficeto(String officeto);
 }
