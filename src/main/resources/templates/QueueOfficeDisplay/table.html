@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" class="light-style layout-menu-fixed layout-compact" dir="ltr" data-theme="theme-default" data-assets-path="../assets/" data-template="vertical-menu-template-free" data-style="light">
+  <div th:replace="includes/officelist/head :: head"></div>
+
+  <body>
+    <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
+        <div th:replace="includes/officelist/aside :: layout-menu"></div>
+        <div class="layout-page">
+          <div th:replace="includes/officelist/nav :: layout-navbar"></div>
+          <div class="content-wrapper">
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <div class="row mb-12 g-6">
+                <div class="col-md-6 col-lg-4">
+                    <div id="queue-card">Loading...</div>
+                </div>
+                  <div class="col-md-6 col-lg-8">
+                    <div class="card h-100">
+                      <h5 class="card-header">Waiting Queue List</h5>
+                      <div class="table-responsive text-nowrap">
+                        <table class="table table-hover table-bordered">
+                          <thead class="table-dark">
+                            <tr>
+                              <th>Queue Number</th>
+                              <th>Office</th>
+                              <th>Priority</th>
+                              <th>Actions</th>
+                            </tr>
+                          </thead>
+                          <tbody id="queue-data">
+                          </tbody>
+                        </table>
+                    </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div th:replace="includes/officelist/footer :: layout-footer"></div>
+            <div class="content-backdrop fade"></div>
+          </div>
+        </div>
+      </div>
+      <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <script src="../assets/js/quedata/quedisplay.js"></script>
+  </body>
+</html>

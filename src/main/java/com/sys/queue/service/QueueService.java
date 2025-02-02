@@ -19,10 +19,10 @@ public class QueueService {
     @Autowired
     private QueueOfficeListRepository queueOfficeListRepository;
 
-    // Save new QueueList and QueueOfficeList
     public void saveQueueAndQueueOfficeList(QueueOfficeList queueOfficeList) {
         Integer latestQuenum = queueListRepository.getLatestQuenum();
         Integer newQuenum = latestQuenum != null ? latestQuenum + 1 : 1;
+    
         QueueList queueList = new QueueList();
         queueList.setQunem(newQuenum); 
         queueList.setOfficeto(queueOfficeList.getOfficeto());
@@ -31,12 +31,20 @@ public class QueueService {
         queueList.setUpdatedat(null);  
         queueList.setDeletedat(null);  
         queueList = queueListRepository.save(queueList);
+    
+        // Set the queue list and other details
         queueOfficeList.setQunem(newQuenum);  
         queueOfficeList.setQueueList(queueList);
         queueOfficeList.setCreatedat(LocalDateTime.now());
         queueOfficeList.setUpdatedat(null);  
+    
+        // Ensure status is set to 1
+        queueOfficeList.setStatus(1);  // Explicitly setting the status if desired
+    
+        // Save the QueueOfficeList with the status set to 1
         queueOfficeListRepository.save(queueOfficeList);
     }
+    
 
 
         //update data from queuelist and old data in queueofficelist

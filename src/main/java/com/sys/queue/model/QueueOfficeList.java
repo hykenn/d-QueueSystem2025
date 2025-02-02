@@ -28,6 +28,9 @@ public class QueueOfficeList {
     @Column(name = "deletedat")
     private LocalDateTime deletedat;
 
+    @Column(name = "status")
+    private Integer status = 1; // Added status with default value 1
+
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "queue_list_id", referencedColumnName = "id", nullable = false)
     private QueueList queueList;
@@ -57,11 +60,11 @@ public class QueueOfficeList {
         this.id = id;
     }
 
-    public Integer getQunem() {  // Changed return type to Integer
+    public Integer getQunem() {
         return quenum;
     }
 
-    public void setQunem(Integer quenum) {  // Changed parameter type to Integer
+    public void setQunem(Integer quenum) {
         this.quenum = quenum;
     }
 
@@ -105,6 +108,14 @@ public class QueueOfficeList {
         this.deletedat = deletedat;
     }
 
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
     public QueueList getQueueList() {
         return queueList;
     }
@@ -117,12 +128,13 @@ public class QueueOfficeList {
     public String toString() {
         return "QueueOfficeList{" +
                 "id=" + id +
-                ", quenum=" + quenum +  // Changed to display Integer value
+                ", quenum=" + quenum +
                 ", officeto='" + officeto + '\'' +
                 ", priority='" + priority + '\'' +
                 ", createdat=" + createdat +
                 ", updatedat=" + updatedat +
                 ", deletedat=" + deletedat +
+                ", status=" + status + // Added status to toString
                 ", queueList=" + queueList +
                 '}';
     }
